@@ -10,8 +10,8 @@ image = Image.open('dibujo.jpg')
 st.image(image, caption='Interfaces multimodales')
 
 
-texto= st.text_input('Escribe algo', 'Este es mi texto')
-st.write('El texto escrito es', texto)
+texto= st.text_input('Escribe algo aquí', 'Este es mi textooo')
+st.write('El texto escrito es...', texto)
 
 st.subheader("Ahora usaremos  columnas")
 
