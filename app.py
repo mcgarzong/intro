@@ -1,62 +1,62 @@
 import streamlit as st
 from PIL import Image
 
-st.title(" Mi primera app ")
+st.title(" Laboratorio de emociones ")
 
-st.header(" En este espacio comienzo a desarrollar mis aplicaciones para interfaces multimodales ")
-st.write(" Facilmente puedo realizar backend y fronted ")
+st.header(" Exploro cómo se comunican las emociones con el cuerpo, la voz y el entorno ")
+st.write(" Descubre más... ")
 image = Image.open('dibujo.jpg')
 
 st.image(image, caption='Interfaces multimodales')
 
 
-texto= st.text_input('Escribe algo aquí', 'Este es mi textooo')
-st.write('El texto escrito es...', texto)
+texto= st.text_input('¿Como te sientes hoy?', 'Cuentame aquí')
+st.write('Hoy te sientes...', texto)
 
 st.subheader("Ahora usaremos  columnas")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Esta es la primera columna")
-    st.write("Las interfaces multimodales mejoran la experiencia de usuario")
-    resp = st.checkbox('Estoy de acuerdo')
+    st.subheader("Mira aquiiii")
+    st.write("Los gestos pueden cambiar cómo nos sentimos.")
+    resp = st.checkbox('¿Has notado cómo cambia tu ánimo al sonreír?')
     if resp:
        st.write('Correcto!')
   
 with col2:
-    st.subheader("Esta es la segunda columna")
-    modo = st.radio("Que Modalidad es la principal en tu interfaz", ('Visual', 'auditiva', 'Táctil'))
-    if modo == 'Visual':
-       st.write('La vista es fundamental para tu interfaz')
-    if modo == 'auditiva':
-       st.write('La audición es fundamental para tu interfaz')
-    if modo == 'Táctil':
-       st.write('El tacto es fundamental para tu interfaz')
+    st.subheader("Tambien...")
+    modo = st.radio("¿Qué tipo de expresión usas más para mostrar tus emociones?", ('Facial', 'Voz', 'Movimiento'))
+    if modo == 'Facial':
+       st.write('Cada emoción tiene su propio lenguaje')
+    if modo == 'Voz':
+       st.write('Cada emoción tiene su propio lenguaje')
+    if modo == 'Movimiento':
+       st.write('Cada emoción tiene su propio lenguaje')
         
-st.subheader("Uso de Botones")
-if st.button('Presiona el botón'):
+st.subheader("Cambialo")
+if st.button('Presiona para transformar tu emoción'):
     st.write('Gracias por presionar')
 else:
     st.write('No has presionado aún')
 
-st.subheader("Selectbox")
+st.subheader("Selecciona")
 in_mod = st.selectbox(
-    "Selecciona la modalidad",
-    ("Audio", "Visual", "Háptico"),
+    "Selecciona una emoción",
+    ("Alegria", "Tristeza", "Calma"),
 )
-if in_mod == "Audio":
-    set_mod = "Reproducir audio"
-elif in_mod == "Visual":
-    set_mod = "Reproducir video"
-elif in_mod == "Háptico":
-    set_mod = "Activar vibración"
+if in_mod == "Alegria":
+    set_mod = ":)"
+elif in_mod == "Tristeza":
+    set_mod = ":("
+elif in_mod == "Calma":
+    set_mod = ":))"
 st.write(" La acción es:" , set_mod)
 
 
 with st.sidebar:
-    st.subheader("Configura la modalidad")
+    st.subheader("Configura tus emociones")
     mod_radio = st.radio(
-        "Escoge la modalidad a usar",
-        ("Visual", "Auditiva","Háptica")
+        "Escoge como te quieres sentir hoy",
+        ("Feliz", "Emocionado","Concentrado")
     )
